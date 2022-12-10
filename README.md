@@ -9,3 +9,5 @@ Each data strcuture folder has two files `datastructure.js` and `datastructure.t
 `datastructure.js` contains the class Shape along with common methods without implementation. 
 You can add you own implementation along with the test cases associated with each file. 
 
+## How to run test
+You can run test for each datastructre by running the command `npm run ${path to your datastructure test file}`
