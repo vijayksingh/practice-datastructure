@@ -72,3 +72,6 @@ console.log(value); // output: 4
 
 // convert the list to a string
 console.log(list.toString()); // output: 1,2,4
+
+// export the LinkedList class
+module.exports = LinkedList;

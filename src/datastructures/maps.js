@@ -67,5 +67,5 @@ and the delete() method to remove a key-value pair from the map.
 We also use the has() method to check if a given key is present in the map.
 */
 
-
-
+// export the Map class
+module.exports = Map;

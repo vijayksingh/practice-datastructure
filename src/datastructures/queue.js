@@ -58,3 +58,6 @@ queue.clear();
 
 // check if the queue is empty
 console.log(queue.isEmpty()); // output: true
+
+// export the Queue class
+module.exports = Queue;

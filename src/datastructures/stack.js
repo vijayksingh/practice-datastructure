@@ -56,3 +56,6 @@ stack.clear();
 
 // check if the stack is empty
 console.log(stack.isEmpty()); // output: true
+
+// export the Stack class
+module.exports = Stack;

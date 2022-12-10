@@ -45,3 +45,6 @@ console.log(phoneBook.get('John Doe'));  // '456-789-0123'
 // remove an entry from the hash table
 phoneBook.remove('John Doe');
 console.log(phoneBook.contains('John Doe'));  // false
+
+// export the HashTable class
+module.exports = HashTable;
