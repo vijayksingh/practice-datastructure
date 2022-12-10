@@ -30,6 +30,9 @@ class BloomFilter {
   }
   
   add(key) {
+    if (typeof value !== 'string') {
+      throw new Error('Value must be a string');
+    }
     for (const hashFunction of this.hashFunctions) {
       const index = hashFunction(key);
       this.bitArray[index] = 1;
@@ -37,6 +40,9 @@ class BloomFilter {
   }
   
   mayContain(key) {
+    if (typeof value !== 'string') {
+      throw new Error('Value must be a string');
+    }
     for (const hashFunction of this.hashFunctions) {
       const index = hashFunction(key);
       if (this.bitArray[index] === 0) {
@@ -44,6 +50,16 @@ class BloomFilter {
       }
     }
     return true;
+  }
+
+  remove(key) {
+    if (typeof value !== 'string') {
+      throw new Error('Value must be a string');
+    }
+    for (const hashFunction of this.hashFunctions) {
+      const index = hashFunction(key);
+      this.bitArray[index] = 0;
+    }
   }
 }
 
