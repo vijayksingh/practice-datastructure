@@ -1,33 +1,36 @@
-function Stack() {
+function Stack(item = []) {
+    this.values = item
 
   // adds an element to the top of the stack
   this.push = function(element) {
-    // implementation goes here
+    this.values.push(element)
   };
 
   // removes an element from the top of the stack
   this.pop = function() {
-    // implementation goes here
+    return this.values.pop()
   };
 
   // returns the element at the top of the stack
   this.top = function() {
-    // implementation goes here
+    if (this.isEmpty()) return undefined
+
+    return this.values[this.values.length - 1]
   };
 
   // returns true if the stack is empty, false otherwise
   this.isEmpty = function() {
-    // implementation goes here
+    return  this.values.length < 1
   };
 
   // returns the number of elements in the stack
   this.size = function() {
-    // implementation goes here
+    return this.values.length
   };
 
   // clears the stack
   this.clear = function() {
-    // implementation goes here
+     return this.values = []
   };
 }
 
