@@ -1,4 +1,4 @@
-const LinkedList = require('./linkedList'); // import the LinkedList class
+const LinkedList = require('./linked-list'); // import the LinkedList class
 
 test('linked list is empty when created', () => {
   const list = new LinkedList();

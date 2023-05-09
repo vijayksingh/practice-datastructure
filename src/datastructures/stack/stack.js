@@ -34,6 +34,10 @@ function Stack(item = []) {
   };
 }
 
+
+// Class -> Initiate => Object
+// Function -> Object
+
 // create a new stack
 var stack = new Stack();
 
@@ -41,6 +45,7 @@ var stack = new Stack();
 stack.push(1);
 stack.push(2);
 stack.push(3);
+
 
 // check the size of the stack
 console.log(stack.size()); // output: 3

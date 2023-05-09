@@ -1,33 +1,40 @@
-function Queue() {
+function Queue(items = []) {
+  this.items = items
 
   // adds an element to the end of the queue
-  this.enqueue = function(element) {
+  this.enqueue = function(item) {
     // implementation goes here
+    this.items.push(item)
   };
 
   // removes an element from the front of the queue
   this.dequeue = function() {
     // implementation goes here
+    return this.items.shift()
   };
 
   // returns the element at the front of the queue
   this.front = function() {
     // implementation goes here
+    return this.items[0]
   };
 
   // returns true if the queue is empty, false otherwise
   this.isEmpty = function() {
     // implementation goes here
+    return this.items.length === 0
   };
 
   // returns the number of elements in the queue
   this.size = function() {
     // implementation goes here
+    return this.items.length
   };
 
   // clears the queue
   this.clear = function() {
     // implementation goes here
+    this.items = []
   };
 }
 
@@ -42,7 +49,7 @@ queue.enqueue(2);
 queue.enqueue(3);
 
 // check the size of the queue
-console.log(queue.size()); // output: 3
+console.log((queue.size)); // output: 3
 
 // check the front element of the queue
 console.log(queue.front()); // output: 1

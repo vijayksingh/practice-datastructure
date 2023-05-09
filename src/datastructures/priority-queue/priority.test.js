@@ -1,6 +1,5 @@
 const PriorityQueue = require('./priority-queue');
 
-const PriorityQueue = require('./PriorityQueue');
 
 test('enqueue() correctly adds values and priorities to the values array and sorts it by priority in ascending order', () => {
   const queue = new PriorityQueue();
