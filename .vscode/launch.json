@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/src/platform/leetcode/sliding-window/2461. Maximum Sum of Distinct Subarrays With Length K.js"
+      "program": "${workspaceFolder}/src/platform/leetcode/two-pointer/259. 3Sum Smaller.js"
     }
   ]
 }

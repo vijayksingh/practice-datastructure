@@ -1,38 +1,78 @@
 class Heap {
   constructor() {
-    this.values = [];
+    this.elements = [];
   }
 
-  insert(value) {
-    // Adds a new value to the heap
+  add(element) {
+    this.elements.push(element);
+    this.heapifyUp();
   }
 
-  remove() {
-    // Removes and returns the root value from the heap
+  pop() {
+    const top = this.elements[0];
+    const last = this.elements.pop()
+    this.elements[0] = last;
+
+    this.heapifyDown()
+    return top;
   }
 
-  sort() {
-    // Sorts the values in the heap
+  heapifyUp() {
+    let child = this.elements.length - 1;
+    let parent = this.parent(child);
+
+    while(parent > 0 && this.elements[parent] < this.elements[child]) {
+      [this.elements[parent], this.elements[child]] = [this.elements[child], this.elements[parent]]
+      child = parent;
+      parent = this.parent(parent);
+    }
   }
 
-  isEmpty() {
-    // Returns true if the heap is empty, and false otherwise
+  heapifyDown() {
+    let parent = 0;
+    let left = this.leftChild(parent)
+    let right = this.rightChild(parent);
+
+    while(left < this.elements.length) {
+      let largerChild = left;
+      if (right < this.elements.length) {
+        if(this.elements[right] > this.elements[left]) {
+          largerChild = right
+        }
+      }
+
+      // swapping and updating the index
+      [this.elements[parent], this.elements[largerChild]] = [this.elements[largerChild], this.elements[parent]]
+      parent = largerChild
+      left = this.leftChild(parent)
+      right = this.rightChild(parent)
+    }
   }
 
-  peek() {
-    // Returns the root value in the heap without removing it
+  parent(i) {
+    return Math.floor((i-1)/2)
   }
 
-  size() {
-    // Returns the number of values in the heap
+  leftChild(i) {
+    return 2 * i + 1
+  }
+
+  rightChild(i) {
+    return (2 * i) + 2
   }
 }
 
-// Example usage:
-const heap = new Heap();
-heap.insert(10);
-heap.insert(5);
-heap.insert(15);
-const minValue = heap.remove(); // minValue = 5
-const maxValue = heap.peek();   // maxValue = 15
-const heapSize = heap.size();   // heapSize = 1
+
+const heap = new Heap()
+
+heap.add(10)
+heap.add(5)
+heap.add(7)
+heap.add(23)
+heap.add(43)
+heap.add(18)
+heap.add(57)
+
+
+console.log(heap.pop()) 
+
